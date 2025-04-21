@@ -50,7 +50,7 @@ jobs:
           done
 
       - uses: softprops/action-gh-release@c062e08bd532815e2082a85e87e3ef29c3e6d191
-        name: Upload Artifacts
+      - name: Upload Artifacts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
