@@ -1,0 +1,25 @@
+PROJECT_NAME           = "V8"
+PROJECT_BRIEF          = "Open source high-performance JavaScript and WebAssembly engine, written in C++"
+PROJECT_LOGO           = "icon.png"
+OUTPUT_DIRECTORY       = "docs"
+INPUT                  = v8/include
+RECURSIVE              = YES
+
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+GENERATE_HTMLHELP      = NO
+GENERATE_TREEVIEW      = YES
+DISABLE_INDEX          = NO
+FULL_SIDEBAR           = NO
+HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css \
+                         doxygen-awesome-css/doxygen-awesome-sidebar-only.css \
+                         doxygen-awesome-css/doxygen-awesome-sidebar-only-darkmode-toggle.css
+HTML_COLORSTYLE        = LIGHT
+HTML_HEADER            = header.html
+HTML_EXTRA_FILES       = doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js \
+                         doxygen-awesome-css/doxygen-awesome-fragment-copy-button.js \
+                         doxygen-awesome-paragraph-link.js
+HTML_COPY_CLIPBOARD    = NO
+
+GENERATE_LATEX         = NO
+QUIET                  = YES

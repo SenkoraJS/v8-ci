@@ -1,2 +1,5 @@
 depot_tools/
 v8/
+miniroot/
+docs/
+doxygen-awesome-css/
