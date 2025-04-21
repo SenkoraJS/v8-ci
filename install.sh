@@ -1,7 +1,8 @@
 #!/bin/sh
 
-mkdir -p miniroot
-mkdir -p miniroot/{lib,include}
+mkdir -p "$(pwd)/miniroot"
+mkdir -p "$(pwd)/miniroot/lib"
+mkdir -p "$(pwd)/miniroot/include"
 
 ROOT="$(pwd)/miniroot"
 
