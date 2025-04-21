@@ -14,7 +14,7 @@ jobs:
       - name: Prepare
         run: |
           sudo apt update
-          sudo apt install -y llvm-19 llvm-19-dev clang-19 libc++-19-dev ninja python3 git patch libglib2.0-dev
+          sudo apt install -y llvm-19 llvm-19-dev clang-19 libc++-19-dev ninja-build python3 git patch libglib2.0-dev
           ./prepare.sh
 
       - name: Build
