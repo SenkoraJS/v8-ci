@@ -1,0 +1,15 @@
+static_library("senkora_v8") {
+  complete_static_lib = true
+
+  sources = []
+  deps = [
+    "//build/config:shared_library_deps",
+    "//:v8",
+    "//:v8_libbase",
+    "//:v8_libplatform",
+  ]
+  configs -= [
+    "//build/config/compiler:default_init_stack_vars",
+    "//build/config/compiler:thin_archive",
+  ]
+}
