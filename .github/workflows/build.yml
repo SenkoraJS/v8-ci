@@ -1,0 +1,59 @@
+name: Build And Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prepare
+        run: |
+          sudo apt update
+          sudo apt install -y llvm-19 llvm-19-dev clang-19 libc++-19-dev ninja python3 git patch
+          ./prepare.sh
+
+      - name: Build
+        run: |
+          cd v8/out
+          ninja senkora_v8
+          
+      - name: install
+        run: |
+          ./install.sh
+
+      - uses: actions/upload-artifact@v4
+      - name: Upload Artifacts
+        with:
+          name: v8-linux-x86_64
+          path: |
+            miniroot/include/
+            miniroot/lib/
+  release:
+    needs: [linux]
+    runs-on: ubuntu-latest
+    name: Release built binaries
+    steps:
+      - uses: actions/download-artifact@v4
+      - name: Download Artifacts
+        with:
+          path: .
+
+      - name: Merge Artifacts
+        run: |
+          sudo apt install -y zip
+          for dir in v8-*-x86_64; do
+            zip -r $dir.zip $dir
+          done
+
+      - uses: softprops/action-gh-release@c062e08bd532815e2082a85e87e3ef29c3e6d191
+        name: Upload Artifacts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: latest
+          prerelease: false
+          files: |
+            v8-*-x86_64.zip
