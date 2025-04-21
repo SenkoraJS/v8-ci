@@ -17,8 +17,7 @@ HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css \
 HTML_COLORSTYLE        = LIGHT
 HTML_HEADER            = header.html
 HTML_EXTRA_FILES       = doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js \
-                         doxygen-awesome-css/doxygen-awesome-fragment-copy-button.js \
-                         doxygen-awesome-paragraph-link.js
+                         doxygen-awesome-css/doxygen-awesome-fragment-copy-button.js
 HTML_COPY_CLIPBOARD    = NO
 
 GENERATE_LATEX         = NO
