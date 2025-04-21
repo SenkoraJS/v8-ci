@@ -8,8 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Checkout repository
-        run: yes
 
       - name: Prepare
         run: |
@@ -33,6 +31,7 @@ jobs:
           path: |
             miniroot/include/
             miniroot/lib/
+
   release:
     needs: [linux]
     runs-on: ubuntu-latest
