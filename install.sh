@@ -1,9 +1,5 @@
 #!/bin/sh
 
-pwd
-ls
-find . -maxdepth 1
-
 mkdir -vp "$(pwd)/miniroot"
 mkdir -vp "$(pwd)/miniroot/lib"
 mkdir -vp "$(pwd)/miniroot/include"
