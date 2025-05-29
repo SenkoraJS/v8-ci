@@ -28,7 +28,7 @@ jobs:
       - name: Prepare
         run: |
           sudo apt update
-          sudo apt install -y python3 git patch doxygen
+          sudo apt install -y python3 git patch doxygen graphviz
           ./prepare.sh
 
       - name: Build
